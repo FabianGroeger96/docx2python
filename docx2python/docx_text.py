@@ -120,9 +120,7 @@ def _get_bullet_string(paragraph: ElementTree.Element, context: Dict[str, Any]) 
     elif numFmt == "bullet":
         return format_bullet(nums.bullet())
     else:
-        warnings.warn(
-            f"{numFmt} numbering format not implemented, substituting '{nums.bullet()}'"
-        )
+        warnings.warn("%s numbering format not implemented, substituting %s" % (numFmt, nums.bullet()))
         return format_bullet(nums.bullet())
 
 
@@ -191,24 +189,29 @@ def get_text(xml: bytes, context: Dict[str, Any]) -> TablesList:
 
             elif tag == FOOTNOTE:
                 if 'separator' not in child.attrib.get(qn('w:type'), '').lower():
-                    tables.insert(f"footnote{child.attrib[qn('w:id')]})\t")
+                    tables.insert("footnote %s \t" % child.attrib[qn('w:id')])
+                    #tables.insert(f"footnote{child.attrib[qn('w:id')]})\t")
 
             elif tag == ENDNOTE:
                 if 'separator' not in child.attrib.get(qn('w:type'), '').lower():
-                    tables.insert(f"endnote{child.attrib[qn('w:id')]})\t")
+                    tables.insert("endnote %s \t" % child.attrib[qn('w:id')])
+                    #tables.insert(f"endnote{child.attrib[qn('w:id')]})\t")
 
             # add placeholders
             elif tag == FOOTNOTE_REFERENCE:
-                tables.insert(f"----footnote{child.attrib[qn('w:id')]}----")
+                tables.insert("----footnote%s----" % child.attrib[qn('w:id')])
+                #tables.insert(f"----footnote{child.attrib[qn('w:id')]}----")
 
             elif tag == ENDNOTE_REFERENCE:
-                tables.insert(f"----endnote{child.attrib[qn('w:id')]}----")
+                tables.insert("----endnote%s----" % child.attrib[qn('w:id')])
+                #tables.insert(f"----endnote{child.attrib[qn('w:id')]}----")
 
             elif tag == IMAGE:
                 rId = child.attrib[qn("r:embed")]
                 image = context["rId2Target"].get(rId)
                 if image:
-                    tables.insert(f"----{image}----")
+                    tables.insert("----%s----" % image)
+                    #tables.insert(f"----{image}----")
 
             elif tag == TAB:
                 tables.insert("\t")

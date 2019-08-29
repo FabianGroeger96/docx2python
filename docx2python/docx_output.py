@@ -14,17 +14,7 @@ from docx2python.iterators import iter_at_depth
 class DocxContent:
     """Holds return values for docx content."""
 
-    def __init__(
-        self,
-        *,
-        header: TablesList,
-        footer: TablesList,
-        body: TablesList,
-        footnotes: TablesList,
-        endnotes: TablesList,
-        properties: Dict[str, Any],
-        images: Dict[str, bytes],
-    ) -> None:
+    def __init__(self, *, header: TablesList, footer: TablesList, body: TablesList, footnotes: TablesList, endnotes: TablesList, properties: Dict[str, Any], images: Dict[str, bytes]) -> None:
         self.header = header
         self.footer = footer
         self.body = body

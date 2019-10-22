@@ -6,12 +6,12 @@
 :created: 6/26/2019
 
 I don't want to add non-ascii text to a potentially ascii-only file, so all bullets
-are '--' and Roman numerals stop at 3999.
+are '-' and Roman numerals stop at 3999.
 
 Doesn't capture formatting like 1.1.1 or b) or (ii). Only the six basic formats are
 covered::
 
-    -- bullet
+    - bullet
     1  decimal
     a  lowerLetter
     A  upperLetter
@@ -113,4 +113,4 @@ def decimal(n: int) -> str:
 
 
 def bullet(_: int = 0) -> str:
-    return "--"
+    return "-"

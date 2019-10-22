@@ -107,8 +107,8 @@ If your docx has no tables, output.body will appear as one a table with all cont
                 [  # cell
                     "Paragraph 1",
                     "Paragraph 2",
-                    "-- bulleted list",
-                    "-- continuing bulleted list",
+                    "- bulleted list",
+                    "- continuing bulleted list",
                     "1)  numbered list",
                     "2)  continuing numbered list"
                     "    a)  sublist",

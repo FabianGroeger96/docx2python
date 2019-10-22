@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name='docx2python-kryon',
-    version='1.0.0',
+    version='1.0.1',
     author="Fabian Gröger",
     author_email="fabian.groeger@bluein.ch",
     description="Extract content from docx files. Edited for Kryon Studio (RPA).",

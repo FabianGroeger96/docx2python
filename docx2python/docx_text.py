@@ -67,7 +67,7 @@ def _increment_list_counter(ilvl2count: Dict[str, int], ilvl: str) -> int:
 # noinspection PyPep8Naming
 def _get_bullet_string(paragraph: ElementTree.Element, context: Dict[str, Any]) -> str:
     """
-    Get bullet string if paragraph is numbered. (e.g, '--  ' or '1)  ')
+    Get bullet string if paragraph is numbered. (e.g, '-  ' or '1)  ')
 
     :param paragraph: <w:p> xml element
     :param context: dictionary of document attributes generated in ``get_context``

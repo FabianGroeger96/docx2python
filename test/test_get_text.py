@@ -70,10 +70,10 @@ class TestGetBulletString:
     """Test strip_test.get_bullet_string """
 
     def test_bullet(self, numbered_paragraphs, context_dict) -> None:
-        """Returns '-- ' for 'bullet'"""
+        """Returns '- ' for 'bullet'"""
         assert context_dict["numId2numFmts"]["1"][0] == "bullet"
         paragraph = ElementTree.fromstring(numbered_paragraphs[0])[0]
-        assert _get_bullet_string(paragraph, context_dict) == "--\t"
+        assert _get_bullet_string(paragraph, context_dict) == "-\t"
 
     def test_decimal(self, numbered_paragraphs, context_dict) -> None:
         """
@@ -122,7 +122,7 @@ class TestGetBulletString:
 
     def test_undefined(self, numbered_paragraphs, context_dict) -> None:
         """
-        Returns '-- ' for unknown formats
+        Returns '- ' for unknown formats
         indented 6 tabs
 
         Format "undefined" won't be defined in the function, so function will fall back
@@ -131,7 +131,7 @@ class TestGetBulletString:
         assert context_dict["numId2numFmts"]["1"][6] == "undefined"
         paragraph = ElementTree.fromstring(numbered_paragraphs[6])[0]
         with pytest.warns(UserWarning):
-            assert _get_bullet_string(paragraph, context_dict) == "\t\t\t\t\t\t--\t"
+            assert _get_bullet_string(paragraph, context_dict) == "\t\t\t\t\t\t-\t"
 
     def test_not_numbered(self, context_dict) -> None:
         """

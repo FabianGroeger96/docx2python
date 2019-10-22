@@ -16,7 +16,7 @@ __additions:__
 * converts bullets and numbered lists to ascii with indentation
 * retains some structure of the original file (more below)
 * extracts document properties (creator, lastModifiedBy, etc.)
-* inserts image placeholders in text (``'----image1.jpg----'``)
+* inserts image placeholders in text (``'----media/image1.jpg----'``)
 * inserts plain text footnote and endnote references in text (``'----footnote1----'``)
 * (optionally) retains font size, font color, bold, italics, and underscore as html
 * full test coverage and documentation for developers

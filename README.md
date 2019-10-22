@@ -1,10 +1,10 @@
-# docx2python
+# docx2python - customized for Kryon
 
 Extract docx headers, footers, text, footnotes, endnotes, properties, and images to a Python object.
 
-[full documentation](https://docx2python.readthedocs.io/en/latest/index.html)
+[full documentation of forked project](https://docx2python.readthedocs.io/en/latest/index.html)
 
-The code is an expansion/contraction of [python-docx2txt](https://github.com/ankushshah89/python-docx2txt) (Copyright (c) 2015 Ankush Shah). The original code is mostly gone, but some of the bones may still be here.
+The code is an expansion/customization of [docx2python](https://github.com/ShayHill/docx2python) (Copyright (c) 2019 Shay Hill). 
 
 __shared features__:
 * extracts text from docx files
@@ -28,7 +28,7 @@ __subtractions:__
 
 ## Installation
 ```bash
-pip install docx2python
+pip install docx2python-kryon
 ```
 
 ## Use
